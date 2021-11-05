@@ -1,0 +1,44 @@
+import pandas as pd
+
+
+df=pd.read_excel("androidgames.xlsx")
+df
+
+#make first column as index
+df.set_index("rank",inplace=True)
+
+
+df
+
+#select single column and print it
+df["title"]
+
+#select multiple columns and print data
+df[["title","price"]]
+
+#select single column and print last 5 elemnts of the column
+a=df["category"]
+a.tail(5)
+
+#select multiple rows and print first five elements
+b=df.iloc[1:8]
+b.head(5)
+
+#select  multiple rows and columns
+df.iloc[[1,2,3],[1,2,3]]
+
+#select all the rows and some columns
+df.iloc[:,[1,2,3]]
+
+#delete first column and print it
+c=df.pop("price")
+
+
+df
+
+
+
+#change 1st ,2md 3rd column name
+df.rename(columns={"installs":"downloaded"})
+
+
